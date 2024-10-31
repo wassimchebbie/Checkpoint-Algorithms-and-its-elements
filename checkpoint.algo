@@ -1,0 +1,26 @@
+ALGORITHM algorithm_name
+
+VAR
+    sentence: STRING;
+    charCount, wordCount, vowelCount, i: INTEGER;
+    isPreviousSpace: BOOLEAN;
+    vowels: SET OF CHAR;
+
+BEGIN
+    (* Initialize variables *)
+    charCount := 0;
+    wordCount := 0;
+    vowelCount := 0;
+    isPreviousSpace := TRUE;
+    vowels := ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+
+    (* Prompt user for input *)
+    WRITE('Enter a sentence ending with a period: ');
+    READLN(sentence);
+
+    (* Check if the sentence ends with a period *)
+    IF sentence[LENGTH(sentence)] <> '.' THEN
+    BEGIN
+        WRITELN('Error: The sentence must end with a period.');
+    END
+    
